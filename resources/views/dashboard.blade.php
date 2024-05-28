@@ -10,6 +10,13 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     {{ __("You're logged in!") }}
+
+                    @foreach ($allUser as $single)
+                        <a href="{{route('chat',$single->id)}}">
+                            <h2 class="font-thin text-center text-red-500  m-2">{{$single->name}}</h2>
+                        </a>
+                            
+                    @endforeach
                 </div>
             </div>
         </div>
